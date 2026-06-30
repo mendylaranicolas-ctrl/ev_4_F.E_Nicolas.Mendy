@@ -10,6 +10,7 @@ function Form({ addOrUpdateItem, itemToEdit }) {
             setInputValue("");
         }
     }, [itemToEdit]);
+
     const handleSubmit = (e) => {
         e.preventDefault();
         if (inputValue.trim()) {
@@ -19,14 +20,17 @@ function Form({ addOrUpdateItem, itemToEdit }) {
     };
 
     return (
-        <form onSubmit={handleSubmit}>
+        <form className="formulario" onSubmit={handleSubmit}>
             <input
+                className="input-texto"
                 type="text"
                 value={inputValue}
                 onChange={(e) => setInputValue(e.target.value)}
-                placeholder="Enter item"
+                placeholder="Ingresa un elemento..."
             />
-            <button type="submit">{itemToEdit ? "Actualizar" : "Agregar"}</button>
+            <button className="btn btn-destacado" type="submit">
+                {itemToEdit ? "Actualizar" : "Agregar"}
+            </button>
         </form>
     );
 }

@@ -1,11 +1,13 @@
-import React, { useState } from "react";
+import React from "react";
 
 function Item({ item, deleteItem, editItem }) {
     return (
-        <li>
-            {item.value}
-            <button onClick={() => editItem(item)}>Editar</button>
-            <button onClick={() => deleteItem(item.id)}>Eliminar</button>
+        <li className="item-fila">
+            <span className="item-texto">{item.value}</span>
+            <div className="item-botones">
+                <button className="btn btn-editar" onClick={() => editItem(item)}>Editar</button>
+                <button className="btn btn-eliminar" onClick={() => deleteItem(item.id)}>Eliminar</button>
+            </div>
         </li>
     );
 }

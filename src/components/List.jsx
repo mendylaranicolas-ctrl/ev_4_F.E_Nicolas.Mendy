@@ -1,9 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 import Item from "./Item";
 
 function List({ items, deleteItem, editItem }) {
     return (
-        <ul>
+        <ul className="lista-items">
             {items.map((item) => (
                 <Item
                     key={item.id}
