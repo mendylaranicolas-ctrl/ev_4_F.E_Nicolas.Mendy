@@ -4,20 +4,21 @@ import List from './components/List';
 import './App.css';
 
 function App() {
-  const [items, setItems] = useState([]);
+  // 1. CARGA INICIAL: Leemos el localStorage directamente en el useState
+  const [items, setItems] = useState(() => {
+    const storedItems = localStorage.getItem('items');
+    // Si hay algo guardado lo convertimos a código, si no, empezamos con un arreglo vacío []
+    return storedItems ? JSON.parse(storedItems) : [];
+  });
+
   const [itemToEdit, setItemToEdit] = useState(null);
 
-  // Se ejecuta una vez al montar: Recupera los datos guardados en el navegador
-  useEffect(() => {
-    const storedItems = JSON.parse(localStorage.getItem('items')) || [];
-    setItems(storedItems);
-  }, []);
-
-  // Se ejecuta cada vez que 'items' cambia: Guarda la lista actualizada en el navegador
+  // 2. GUARDADO: Solo necesitamos este useEffect.
+  // Cada vez que 'items' cambie, lo guardamos en localStorage.
   useEffect(() => {
     localStorage.setItem('items', JSON.stringify(items));
   }, [items]);
-
+  
   // Función para agregar o actualizar un elemento
   const addOrUpdateItem = (value) => {
     if (itemToEdit) {
