@@ -1,8 +1,5 @@
-/* =========================================
-   CONTENEDOR CENTRAL (TARJETA)
-========================================= */
 body {
-  background-color: #f0f2f5; /* Fondo suave para que resalte la tarjeta */
+  background-color: #f0f2f5; 
   display: flex;
   justify-content: center;
   align-items: flex-start;
@@ -15,16 +12,13 @@ body {
   background-color: #ffffff;
   width: 100%;
   max-width: 500px;
-  margin: 0 auto; /* Esta es la línea clave que centra la tarjeta horizontalmente */
+  margin: 0 auto; 
   padding: 30px;
   border-radius: 12px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12); /* Sombra de la tarjeta */
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12); 
   box-sizing: border-box;
 }
 
-/* =========================================
-   TÍTULO
-========================================= */
 .titulo-principal {
   text-align: center;
   color: #333333;
@@ -33,9 +27,6 @@ body {
   margin-bottom: 24px;
 }
 
-/* =========================================
-   FORMULARIO E INPUT
-========================================= */
 .formulario {
   display: flex;
   gap: 10px;
@@ -51,16 +42,12 @@ body {
   transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Efecto de foco en el input */
 .input-texto:focus {
   outline: none;
   border-color: #007bff;
   box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
 }
 
-/* =========================================
-   BOTONES GENERALES
-========================================= */
 .btn {
   padding: 10px 16px;
   border: none;
@@ -76,15 +63,13 @@ body {
   transform: scale(0.97);
 }
 
-/* Botón Destacado (Agregar/Actualizar) */
 .btn-destacado {
-  background-color: #007bff; /* Azul destacado */
+  background-color: #007bff; 
 }
 .btn-destacado:hover {
   background-color: #0056b3;
 }
 
-/* Botón Editar en verde */
 .btn-editar {
   background-color: #28a745;
 }
@@ -92,7 +77,6 @@ body {
   background-color: #1e7e34;
 }
 
-/* Botón Eliminar en rojo */
 .btn-eliminar {
   background-color: #dc3545;
 }
@@ -100,9 +84,6 @@ body {
   background-color: #c82333;
 }
 
-/* =========================================
-   LISTA Y ELEMENTOS (ITEMS)
-========================================= */
 .lista-items {
   list-style: none;
   padding: 0;
@@ -131,4 +112,17 @@ body {
 .item-botones {
   display: flex;
   gap: 8px;
+}
+
+
+.contador {
+  text-align: center;
+  font-weight: bold;
+  color: #007bff; 
+  background-color: #e9ecef;
+  padding: 5px 15px;
+  border-radius: 20px;
+  display: inline-block;
+  margin: 0 auto 20px auto;
+  font-size: 14px;
 }

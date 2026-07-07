@@ -16,6 +16,8 @@ function Form({ addOrUpdateItem, itemToEdit }) {
         if (inputValue.trim()) {
             addOrUpdateItem({ value: inputValue.trim() });
             setInputValue("");
+        } else {
+            alert("El campo no puede estar vacío ni contener solo espacios.");
         }
     };
 

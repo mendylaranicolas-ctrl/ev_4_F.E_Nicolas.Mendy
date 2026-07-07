@@ -25,7 +25,9 @@ function App() {
   };
 
   const deleteItem = (id) => {
-    setItems(items.filter(item => item.id !== id));
+    if (window.confirm("¿Estás seguro de que deseas eliminar este elemento?")) {
+      setItems(items.filter(item => item.id !== id));
+    }
   };
 
   const editItem = (item) => {
@@ -35,6 +37,9 @@ function App() {
   return (
     <div className="App tarjeta-central">
       <h1 className="titulo-principal">CRUD con LocalStorage</h1>
+      
+      <p className="contador">Total: {items.length}</p>
+
       <Form 
         addOrUpdateItem={addOrUpdateItem} 
         itemToEdit={itemToEdit} 
