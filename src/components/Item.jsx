@@ -1,9 +1,20 @@
 import React from "react";
 
-function Item({ item, deleteItem, editItem }) {
+function Item({ item, deleteItem, editItem, toggleComplete }) {
     return (
         <li className="item-fila">
-            <span className="item-texto">{item.value}</span>
+            <div className="item-contenido">
+                <input 
+                    type="checkbox" 
+                    className="checkbox-completado"
+                    checked={item.completed || false} 
+                    onChange={() => toggleComplete(item.id)} 
+                />
+                <span className={`item-texto ${item.completed ? 'tachado' : ''}`}>
+                    {item.value}
+                </span>
+            </div>
+            
             <div className="item-botones">
                 <button className="btn btn-editar" onClick={() => editItem(item)}>Editar</button>
                 <button className="btn btn-eliminar" onClick={() => deleteItem(item.id)}>Eliminar</button>

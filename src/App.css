@@ -126,3 +126,45 @@ body {
   margin: 0 auto 20px auto;
   font-size: 14px;
 }
+
+.buscador {
+  width: 100%;
+  margin-bottom: 20px;
+  box-sizing: border-box;
+  background-color: #fcfcfc;
+  border-color: #ced4da;
+}
+
+.item-contenido {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-grow: 1; 
+}
+
+.checkbox-completado {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+  accent-color: #28a745; 
+}
+
+.tachado {
+  text-decoration: line-through;
+  color: #adb5bd;
+  font-style: italic;
+}
+
+.btn-eliminar-todo {
+  width: 100%;
+  margin-top: 24px;
+  background-color: #ffffff;
+  color: #dc3545;
+  border: 2px solid #dc3545;
+  padding: 12px;
+}
+
+.btn-eliminar-todo:hover {
+  background-color: #dc3545;
+  color: #ffffff;
+}
